@@ -1,0 +1,76 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    /* Offset anchor jumps so a section never lands under the fixed nav. */
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    @apply bg-base text-ink font-sans antialiased;
+  }
+
+  /* Visible, consistent focus ring for keyboard users on every control. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent ring-offset-2 ring-offset-base rounded-[6px];
+  }
+
+  ::selection {
+    @apply bg-accent/30 text-ink;
+  }
+
+  /* Respect the OS setting: no transforms, no transitions, no smooth scroll. */
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto !important;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+}
+
+@layer components {
+  /* Soft, low-contrast glow used behind the hero. Not a gradient wash. */
+  .glow {
+    @apply pointer-events-none absolute rounded-full;
+    filter: blur(0px);
+  }
+
+  .card {
+    @apply rounded-card border border-line bg-surface;
+  }
+
+  .eyebrow {
+    @apply font-mono text-eyebrow uppercase;
+  }
+}
+
+@layer utilities {
+  /* Thin scrollbar for the terminal output pane. */
+  .scrollbar-slim {
+    scrollbar-width: thin;
+    scrollbar-color: #2b313a transparent;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .scrollbar-slim::-webkit-scrollbar-thumb {
+    background-color: #2b313a;
+    border-radius: 999px;
+  }
+}
