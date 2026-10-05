@@ -35,7 +35,7 @@ export const Skills = () => {
               variants={reduced ? undefined : childReveal}
               className="flex flex-col gap-4 rounded-card border border-line bg-surface p-6"
             >
-              <h3 className="flex items-center gap-2.5 font-display text-base font-semibold">
+              <h3 className="flex items-center gap-2.5 font-display text-base font-semibold text-ink">
                 <span className={tone.text}>
                   <Icon name={group.icon} size={16} />
                 </span>

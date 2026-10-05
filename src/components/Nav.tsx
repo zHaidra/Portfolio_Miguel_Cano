@@ -53,7 +53,7 @@ export const Nav = () => {
       className={cn(
         'fixed inset-x-0 top-0 z-50 transition-colors duration-300',
         scrolled || open
-          ? 'border-b border-line bg-base/85 backdrop-blur-md'
+          ? 'border-b border-line bg-canvas/85 backdrop-blur-md'
           : 'border-b border-transparent',
       )}
     >
@@ -108,7 +108,7 @@ export const Nav = () => {
             <li className="ml-1">
               <a
                 href={`mailto:${site.links.email}`}
-                className="inline-flex h-10 items-center rounded-control bg-ink px-4 text-sm font-medium text-base transition-colors hover:bg-white"
+                className="inline-flex h-10 items-center rounded-control bg-ink px-4 text-sm font-medium text-canvas transition-colors hover:bg-white"
               >
                 {t(ui.getInTouch)}
               </a>
@@ -138,7 +138,7 @@ export const Nav = () => {
           <motion.nav
             id={menuId}
             aria-label={t(ui.primaryNav)}
-            className="overflow-hidden border-t border-line bg-base md:hidden"
+            className="overflow-hidden border-t border-line bg-canvas md:hidden"
             initial={reduced ? false : { height: 0, opacity: 0 }}
             animate={reduced ? {} : { height: 'auto', opacity: 1 }}
             exit={reduced ? {} : { height: 0, opacity: 0 }}
@@ -164,7 +164,7 @@ export const Nav = () => {
                 <a
                   href={`mailto:${site.links.email}`}
                   onClick={close}
-                  className="flex min-h-[48px] items-center justify-center rounded-control bg-ink px-4 font-medium text-base"
+                  className="flex min-h-[48px] items-center justify-center rounded-control bg-ink px-4 font-medium text-canvas"
                 >
                   {t(ui.getInTouch)}
                 </a>

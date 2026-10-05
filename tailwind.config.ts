@@ -9,7 +9,10 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: '#0A0B0D',
+        // Named `canvas`, not `base`: a colour called `base` would collide
+        // with Tailwind's built-in `text-base` font-size utility, and the
+        // colour silently wins — painting text in the page background.
+        canvas: '#0A0B0D',
         surface: '#101318',
         raised: '#181C23',
         line: '#1E222A',
